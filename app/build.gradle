@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id "kotlin-kapt"
+    id 'dagger.hilt.android.plugin'
+}
+
+apply plugin: 'org.jetbrains.kotlin.android.extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.sunday.dindinn_challenge"
+        minSdkVersion 16
+        targetSdkVersion 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation "com.jakewharton.rxbinding:rxbinding:$rx_binding_version"
+    implementation "com.jakewharton.rxbinding:rxbinding-recyclerview-v7:$rx_binding_version"
+    implementation "com.jakewharton.rxbinding:rxbinding-support-v4:$rx_binding_version"
+
+    //LifeCycle
+    implementation 'androidx.lifecycle:lifecycle-common:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+
+    //Gson
+    implementation "com.google.code.gson:gson:2.8.6"
+
+    //dagger hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    final auto_parcel_version = "0.3.1"
+    implementation "com.github.frankiesardo:auto-parcel:$auto_parcel_version"
+    kapt "com.github.frankiesardo:auto-parcel-processor:$auto_parcel_version"
+
+    final rx_lifecycle_version = "0.3.0"
+    implementation "com.trello:rxlifecycle:$rx_lifecycle_version"
+    implementation "com.trello:rxlifecycle-components:$rx_lifecycle_version"
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation "io.reactivex:rxjava:1.3.8"
+
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    testImplementation 'android.arch.core:core-testing:1.1.1'
+    testImplementation "com.google.truth.extensions:truth-java8-extension:1.0.1"
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+
+}
+
+kapt {
+    correctErrorTypes true
+}

@@ -1,4 +1,4 @@
-package com.sunday.dindinn_challenge
+package com.sunday.dindinn_challenge.ui.orders
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -9,11 +9,12 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import com.sunday.dindinn_challenge.R
 import com.sunday.dindinn_challenge.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class OrdersActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding

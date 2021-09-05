@@ -1,4 +1,4 @@
-package com.sunday.dindinn_challenge
+package com.sunday.dindinn_challenge.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.sunday.dindinn_challenge.R
 import com.sunday.dindinn_challenge.databinding.FragmentSecondBinding
 
 /**

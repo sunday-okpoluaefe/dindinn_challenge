@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dindinn_challenge">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.orders.OrdersActivity"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Dindinn_challenge.NoActionBar">
             <intent-filter>
